@@ -5,18 +5,18 @@ int main()
 {
 	{
 		ScavTrap s;
-		ScavTrap s1("Scavy");
+		ClapTrap c1("Clappy");
 		ScavTrap s2("Davy");
 		ScavTrap s3 = s2;
 
 		std::cout << "------------------------------------------" << std::endl;
 		s.attack("Scavy");
 		std::cout << "------------------------------------------" << std::endl;
-		s1.takeDamage(20);
+		c1.takeDamage(20);
 		std::cout << "------------------------------------------" << std::endl;
-		s1.attack("Davy");
+		c1.attack("Davy");
 		std::cout << "------------------------------------------" << std::endl;
-		s2.takeDamage(20);
+		s2.takeDamage(0);
 		std::cout << "------------------------------------------" << std::endl;
 		s2.attack("Clappy");
 		std::cout << "------------------------------------------" << std::endl;
@@ -27,6 +27,10 @@ int main()
 		s3.beRepaired(20);
 		std::cout << "------------------------------------------" << std::endl;
 		s2.beRepaired(19);
+		std::cout << "------------------------------------------" << std::endl;
+		std::cout << "------------------------------------------" << std::endl;
+		ClapTrap *c = new ScavTrap ("bill");
+		delete c;
 		std::cout << "------------------------------------------" << std::endl;
 	}
 	return 0;

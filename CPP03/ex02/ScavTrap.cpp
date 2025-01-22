@@ -2,6 +2,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+	this->_name = "Scavvy";
 	std::cout << "ScavTrap " << this->_name << " ready to serve" << std::endl;
 	_hitpoints = 100;
 	_energyPoints = 50;

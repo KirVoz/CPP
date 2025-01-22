@@ -2,6 +2,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
+	this->_name = "Fraggy";
 	std::cout << "FragTrap " << this->_name << " is ready to fight!" << std::endl;
 	_hitpoints = 100;
 	_energyPoints = 100;
