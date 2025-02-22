@@ -1,5 +1,26 @@
 #include "Phonebook.hpp"
 
+bool isValidName(const std::string &name)
+{
+	if (name.empty())
+	{
+		std::cout << "\033[1;31mYOU CANT LEAVE THIS FIELD EMPTY\033[0m" << std::endl;
+		return false;
+	}
+	return true;
+}
+
+std::string getValidInput(const std::string &message)
+{
+	std::string input;
+	do 
+	{
+		std::cout << message;
+		std::getline(std::cin, input);
+	} while (!isValidName(input));
+	return input;
+}
+
 int main()
 {
 	Phonebook phonebook;
@@ -15,17 +36,11 @@ int main()
 
 		if (command == "ADD")
 		{
-			std::string first_name, last_name, nickname, phone_number, underwear_color;
-			std::cout << "Enter first name: ";
-			std::getline(std::cin, first_name);
-			std::cout << "Enter last name: ";
-			std::getline(std::cin, last_name);
-			std::cout << "Enter nickname: ";
-			std::getline(std::cin, nickname);
-			std::cout << "Enter phone number: ";
-			std::getline(std::cin, phone_number);
-			std::cout << "Enter underwear color: ";
-			std::getline(std::cin, underwear_color);
+			std::string first_name = getValidInput("Enter first name: ");
+			std::string last_name = getValidInput("Enter last name: ");
+			std::string nickname = getValidInput("Enter nickname: ");
+			std::string phone_number = getValidInput("Enter phone number: ");
+			std::string underwear_color = getValidInput("Enter underwear color: ");
 			phonebook.add_contact(first_name, last_name, nickname, phone_number, underwear_color);
 		}
 		else if (command == "SEARCH")

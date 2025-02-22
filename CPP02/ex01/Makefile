@@ -3,7 +3,7 @@ SRS = main.cpp \
 
 OBJ = $(SRS:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
