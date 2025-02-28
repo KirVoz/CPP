@@ -9,7 +9,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = harlFilter
+NAME = Fixed00
 
 all: $(NAME)
 
