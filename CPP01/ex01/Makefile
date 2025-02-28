@@ -27,6 +27,6 @@ re: fclean all
 
 vg: fclean $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -g -o $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) 10 bob
 
 .PHONY: all clean fclean re
