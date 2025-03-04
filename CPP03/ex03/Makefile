@@ -12,7 +12,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = cpp02
+NAME = cpp03
 
 all: $(NAME)
 

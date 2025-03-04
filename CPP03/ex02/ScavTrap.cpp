@@ -2,8 +2,8 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_name = "Scavvy";
-	std::cout << "ScavTrap " << this->_name << " ready to serve" << std::endl;
+	this->_name = "Scavy";
+	std::cout << "\033[1;34mScavTrap " << this->_name << " ready to serve\033[0m" << std::endl;
 	_hitpoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap " << name << " ready to serve" << std::endl;
+	std::cout << "\033[1;34mScavTrap " << name << " ready to serve\033[0m" << std::endl;
 	_hitpoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-	std::cout << "ScavTrap has copied " << this->_name << " assambled and ready for action!" << std::endl;
+	std::cout << "\033[1;34mScavTrap has copied " << this->_name << ", assambled and ready for action\033[0m" << std::endl;
 	*this = other;
 }
 
@@ -37,7 +37,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << this->_name << " is destroyed" << std::endl;
+	std::cout << "\033[1;31mScavTrap " << this->_name << " is destroyed\033[0m" << std::endl;
 }
 
 void ScavTrap::attack(const std::string &target)

@@ -2,23 +2,23 @@
 
 ClapTrap::ClapTrap() : _name("Clappy"), _hitpoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << _name << " assambled and ready for action!" << std::endl;
+	std::cout << "\033[3;34mClapTrap " << _name << " assambled and ready for action!\033[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap with name " << _name << " assambled and ready for action!" << std::endl;
+	std::cout << "\033[3;34mClapTrap with name " << _name << " assambled and ready for action!\033[0m" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
 	*this = other;
-	std::cout << "ClapTrap has copied " << this->_name << " assambled and ready for action!" << std::endl;
+	std::cout << "\033[3;34mClapTrap has copied " << this->_name << " assambled and ready for action!\033[0m" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->_name << " was disassambled to piceces! RIP" << std::endl;
+	std::cout << "\033[3;31mClapTrap " << this->_name << " was disassambled to piceces! RIP\033[0m" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)

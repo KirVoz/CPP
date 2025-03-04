@@ -4,14 +4,16 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {
+private:
+	std::string _name;
 public:
 	DiamondTrap();
 	DiamondTrap(std::string name);
 	DiamondTrap(const DiamondTrap &other);
-	~DiamondTrap();
+	virtual ~DiamondTrap();
+
 	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void whoAmI();
+	void getStat();
 	DiamondTrap &operator=(const DiamondTrap &other);
 };
