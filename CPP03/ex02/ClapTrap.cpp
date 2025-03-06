@@ -57,32 +57,32 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (this->_hitpoints <= amount)
 	{
 		this->_hitpoints = 0;
-		std::cout << "ScavTrap " << this->_name << " make KABOOOM!" << std::endl;
+		std::cout << this->_name << " id dead!" << std::endl;
 		return ;
 	}
 	else
 		this->_hitpoints -= amount;
-	std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
+	std::cout << this->_name << " takes " << amount << " points of damage!" << std::endl;
 	std::cout << this->_name << " has " << this->_hitpoints << " hitpoints left!" << std::endl;
 	if (this->_hitpoints == 0)
-		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+		std::cout << this->_name << " is dead!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energyPoints <= 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " is tired and exousted!" << std::endl;
+		std::cout << this->_name << " is tired and exhausted!" << std::endl;
 		return ;
 	}
 	if (this->_hitpoints == 0)
 	{
-		std::cout << "It's SAD, but ClapTrap " << this->_name << " is dead and can't be repaired!" << std::endl;
+		std::cout << "It's SAD, but " << this->_name << " is dead and can't be repaired!" << std::endl;
 		return ;
 	}
 	else if (this->_hitpoints + amount >= 10)
 		this->_hitpoints = 10;
 	else
 		this->_hitpoints += amount;
-	std::cout << "ClapTrap " << this->_name << " is repaired for " << amount << " points!" << std::endl;
+	std::cout << this->_name << " is repaired for " << amount << " points!" << std::endl;
 }

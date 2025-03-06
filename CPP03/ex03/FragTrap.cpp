@@ -3,17 +3,17 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "FragTrap " << this->_name << " is ready to fight!" << std::endl;
-	_hitpoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	this->_hitpoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap " << name << " is ready to fight!" << std::endl;
-	_hitpoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	this->_hitpoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
@@ -61,39 +61,12 @@ void FragTrap::attack(const std::string &target)
 	std::cout << this->_name << " has " << this->_energyPoints << " energy points left!" << std::endl;
 }
 
-void FragTrap::beRepaired(unsigned int amount)
+int FragTrap::getHP() const
 {
-	if (this->_hitpoints <= 0)
-	{
-		std::cout << "Dead FragTrap " << this->_name << " can't be repaired!" << std::endl;
-		return ;
-	}
-	if (this->_hitpoints + amount >= 100)
-	{
-		this->_hitpoints = 100;
-		std::cout << "FragTrap " << this->_name << " is fully repaired!" << std::endl;
-		return ;
-	}
-	this->_hitpoints += amount;
-	std::cout << "FragTrap " << this->_name << " is repaired for " << amount << " hitpoints!" << std::endl;
-	std::cout << this->_name << " has " << this->_hitpoints << " hitpoints left!" << std::endl;
+	return this->_hitpoints;
 }
 
-void FragTrap::takeDamage(unsigned int amount)
+int FragTrap::getAD() const
 {
-	if (this->_hitpoints <= 0)
-	{
-		std::cout << this->_name << " is allready dead!" << std::endl;
-		return ;
-	}
-	if (this->_hitpoints <= amount)
-	{
-		this->_hitpoints = 0;
-		std::cout << "FragTrap " << this->_name << " make KABOOOM!" << std::endl;
-		return ;
-	}
-	else
-		this->_hitpoints -= amount;
-	std::cout << "FragTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
-	std::cout << this->_name << " has " << this->_hitpoints << " hitpoints left!" << std::endl;
+	return this->_attackDamage;
 }

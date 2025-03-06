@@ -1,21 +1,24 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name")
 {
-	this->_name = ClapTrap::_name + "_clap_name";
+	this->_name = "default";
+	this->_hitpoints = FragTrap::getHP();
+	this->_energyPoints = ScavTrap::getEP();
+	this->_attackDamage = FragTrap::getAD();
 	std::cout << "DiamondTrap" << this->_name << " default constructor" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
-	this->_name = ClapTrap::_name + "_clap_name";
-	this->_hitpoints = FragTrap::_hitpoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
-	std::cout << "DiamondTrap " << this->_name << " constructor" << std::endl;
+	this->_name = name;
+	this->_hitpoints = FragTrap::getHP();
+	this->_energyPoints = ScavTrap::getEP();
+	this->_attackDamage = FragTrap::getAD();
+	std::cout << "DiamondTrap " << this->_name << " name constructor" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : FragTrap(other), ScavTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	*this = other;
 	std::cout << "DiamondTrap copy constructor" << std::endl;
@@ -23,7 +26,11 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other) : FragTrap(other), ScavTrap(o
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
-	FragTrap::operator=(other);
+	std::cout << "DiamondTrap assignation operator" << std::endl;
+	this->_name = other._name;
+	this->_hitpoints = other._hitpoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
 	return *this;
 }
 
@@ -35,7 +42,7 @@ DiamondTrap::~DiamondTrap()
 void DiamondTrap::whoAmI()
 {
 	std::cout << "_________________________" << std::endl;
-	std::cout << "DiamondTrap " << this->_name << " whoAmI, " << "great son of Sir \033[1;31m" << ClapTrap::_name << "\033[0m!!!"<< std::endl;
+	std::cout << "You ask WHOAMI? I am " << this->_name << " great son of Sir \033[1;31m" << ClapTrap::_name << "\033[0m!!!"<< std::endl;
 	std::cout << "_________________________" << std::endl;
 }
 

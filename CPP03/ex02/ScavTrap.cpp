@@ -57,56 +57,6 @@ void ScavTrap::attack(const std::string &target)
 	std::cout << "ScavTrap " << this->_name << " has " << this->_energyPoints << " energy points left!" << std::endl;
 }
 
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hitpoints <= 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " is dead!" << std::endl;
-		return ;
-	}
-	if (amount == 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " is not damaged!" << std::endl;
-		return ;
-	}
-	if (this->_hitpoints - amount > 0)
-	{
-		this->_hitpoints -= amount;
-		std::cout << "ScavTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
-		std::cout << "ScavTrap " << this->_name << " has " << this->_hitpoints << " hitpoints left!" << std::endl;
-	}
-	else
-	{
-		this->_hitpoints = 0;
-		std::cout << "ScavTrap " << this->_name << " is killed!" << std::endl;
-	}
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_energyPoints <= 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " is out of energy!" << std::endl;
-		return ;
-	}
-	if (this->_hitpoints == 100)
-	{
-		std::cout << "ScavTrap " << this->_name << " is already fully repaired!" << std::endl;
-		return ;
-	}
-	if (this->_hitpoints + amount < 100)
-	{
-		this->_hitpoints += amount;
-		std::cout << "ScavTrap " << this->_name << " is repaired for " << amount << " hitpoints!" << std::endl;
-		std::cout << "ScavTrap " << this->_name << " has " << this->_hitpoints << " hitpoints left!" << std::endl;
-	}
-	else
-	{
-		this->_hitpoints = 100;
-		std::cout << "ScavTrap " << this->_name << " is fully repaired!" << std::endl;
-	}
-}
-
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->_name << " has entered in Gate keeper mode!" << std::endl;
