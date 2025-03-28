@@ -21,10 +21,6 @@ static bool isInt(const std::string &str, size_t len)
 		if (!isdigit(str[i]))
 			return false;
 	}
-	// int num = atoi(str.c_str());
-	// std::cout << num << std::endl;
-	// if (num > INT_MAX || num < INT_MIN)
-	// 	return false;
 	return true;
 }
 
@@ -59,9 +55,6 @@ static bool isFloat(const std::string &str, size_t len) {
         } else {
             return false;
         }
-		// float num = atof(str.c_str());
-		// if (num > FLOAT_MAX || num < FLOAT_MIN)
-		// 	return false;
     }
     return true;
 }
@@ -85,9 +78,6 @@ static bool isDouble(const std::string &str, size_t len) {
 		} else {
 			return false;
 		}
-		// double num = atof(str.c_str());
-		// if (num > DOUBLE_MAX || num < DOUBLE_MIN)
-		// 	return false;
 	}
 	return true;
 }
