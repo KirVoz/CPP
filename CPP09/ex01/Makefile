@@ -1,5 +1,5 @@
-SRC = 	main.cpp \
-		
+SRC = 	RPN.cpp \
+		main.cpp
 		
 OBJ = $(SRC:.cpp=.o)
 
@@ -9,7 +9,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
 
-NAME = btc
+NAME = RPN
 
 all: $(NAME)
 
