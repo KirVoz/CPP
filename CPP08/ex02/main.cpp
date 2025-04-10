@@ -24,8 +24,11 @@ int main()
 		MutantStack<int>::it it = mstack.begin();
 		MutantStack<int>::it ite = mstack.end();
 
+		std::cout << "INITIAL VALUE: " << *it << '\n';
 		++it;
+		std::cout << "After ++it: " << *it << '\n';
 		--it;
+		std::cout << "After --it: " << *it << std::endl;
 
 		while (it != ite)
 		{
@@ -53,6 +56,12 @@ int main()
 
 		std::list<int>::iterator it = l.begin();
 		std::list<int>::iterator ite = l.end();
+
+		std::cout << "INITIAL VALUE: " << *it << '\n';
+		++it;
+		std::cout << "After ++it: " << *it << '\n';
+		--it;
+		std::cout << "After --it: " << *it << std::endl;
 
 		while (it != ite)
 		{

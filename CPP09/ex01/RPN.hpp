@@ -7,4 +7,15 @@
 #include <stdexcept>
 #include <cstdlib>
 
-double RPN(const std::string &string);
+class RPN
+{
+private:
+	std::stack<double> s;
+public:
+	RPN();
+	RPN(const RPN &other);
+	RPN&operator=(const RPN &other);
+	~RPN();
+	
+	double RevPN(const std::string &string);
+};

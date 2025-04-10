@@ -1,8 +1,23 @@
 #include "RPN.hpp"
 
-double RPN(const std::string &string)
+RPN::RPN(){}
+
+RPN::RPN(const RPN &other){
+	this->s = other.s;
+}
+
+RPN::~RPN(){}
+
+RPN &RPN::operator=(const RPN &other){
+	if (this != &other) {
+		this->s = other.s;
+	}
+	return *this;
+}
+
+double RPN::RevPN(const std::string &string)
 {
-	std::stack<double> s;
+
 	std::istringstream iss(string);
 	std::string token;
 
@@ -32,7 +47,7 @@ double RPN(const std::string &string)
 					throw std::runtime_error("Error: Divide on ZERO!");
 				res = left / right;
 			} else {
-				throw std::runtime_error("Error: unknown operator");
+				throw std::runtime_error("Error: unknown operator '" + token + "'");
 			}
 			s.push(res);
 		}

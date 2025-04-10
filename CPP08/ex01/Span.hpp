@@ -34,6 +34,8 @@ public:
 	std::list<int>::iterator begin();
 
 	std::list<int>::iterator end();
+
+	int printLength();
 	
 	class SpanFullException : public std::exception
 	{

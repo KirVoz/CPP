@@ -77,3 +77,8 @@ std::list<int>::iterator Span::end()
 {
 	return _lst.end();
 }
+
+int Span::printLength()
+{
+	return this->_lst.size();
+}

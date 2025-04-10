@@ -9,7 +9,8 @@ int main(int ac, char** av)
 			std::cout << "Usage: ./RPN [string]" << std::endl;
 			return 1;
 		}
-		std::cout << RPN(av[1]) << std::endl;
+		RPN s;
+		std::cout << s.RevPN(av[1]) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
