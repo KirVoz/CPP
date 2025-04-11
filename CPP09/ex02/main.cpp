@@ -19,11 +19,15 @@ int main(int argc, char **argv)
 
         PmergeMe sorter(oss.str());
 
+        std::cout << "Unsorted : ";
+        for (std::vector<int>::size_type j = 0; j < sorter._vec.size(); ++j)
+            std::cout << sorter._vec[j] << " ";
+        std::cout << std::endl;
         clock_t startVec = clock();
         std::vector<int> sortedVec = PmergeMe::FordJohnsonSort(sorter._vec);
         clock_t endVec = clock();
 
-        std::cout << "Sorted vector: ";
+        std::cout << "Sorted : ";
         for (std::vector<int>::size_type i = 0; i < sortedVec.size(); ++i)
             std::cout << sortedVec[i] << " ";
         std::cout << std::endl;
@@ -35,10 +39,10 @@ int main(int argc, char **argv)
         std::deque<int> sortedDeq = PmergeMe::FordJohnsonSort(sorter._deq);
         clock_t endDeq = clock();
 
-        std::cout << "Sorted deque: ";
-        for (std::deque<int>::size_type i = 0; i < sortedDeq.size(); ++i)
-            std::cout << sortedDeq[i] << " ";
-        std::cout << std::endl;
+        // std::cout << "Sorted deque: ";
+        // for (std::deque<int>::size_type i = 0; i < sortedDeq.size(); ++i)
+        //     std::cout << sortedDeq[i] << " ";
+        // std::cout << std::endl;
 
         double timeDeq = static_cast<double>(endDeq - startDeq) * 1000.0 / CLOCKS_PER_SEC;
         std::cout << "Time for " << sortedDeq.size() << " elements std::deque: " << timeDeq << " miliseconds" << std::endl;

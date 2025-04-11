@@ -53,6 +53,3 @@ int BinarySearchInsertPos(const std::vector<int> &sorted, int value)
 {
 	return std::lower_bound(sorted.begin(), sorted.end(), value) - sorted.begin();
 }
-
-// Шаблонная реализация алгоритма Форда-Джонсона
-

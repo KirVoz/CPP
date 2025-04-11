@@ -102,7 +102,7 @@ void BitcoinExchange::readInput(const std::string &filename)
 		double exchangeRate = dataIt->second;
 		double result = value * exchangeRate;
 
-		std::cout << date << " => " << value << " = " << std::setprecision(16) << result << std::endl;
+		std::cout << date << " => " << value << " = " << /*std::setprecision(16) << */ result << std::endl;
 	}
 
 	file.close();
@@ -145,7 +145,8 @@ bool BitcoinExchange::isValidDate(const std::string &date)
 {
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
 		return false;
-
+	if (date.find_first_not_of("0123456789-") != std::string::npos)
+		return false;
 	int year = std::atoi(date.substr(0, 4).c_str());
 	int month = std::atoi(date.substr(5, 2).c_str());
 	int day = std::atoi(date.substr(8, 2).c_str());

@@ -23,7 +23,7 @@ double RPN::RevPN(const std::string &string)
 
 	while (iss >> token)
 	{
-		if (std::isdigit(token[0]) || (token[0] == '-' && token.size() > 1) || (token[0] == '+' && token.size() > 1))
+		if ((std::isdigit(token[0]) && !token[1]) || (token[0] == '-' && token.size() > 1) || (token[0] == '+' && token.size() > 1))
 		{
 			s.push(std::atof(token.c_str()));
 		} else {
